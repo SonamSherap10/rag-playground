@@ -1,0 +1,25 @@
+[project]
+name = "lang-course"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "SonamSherap10", email = "sonamserpa3231@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=1.4.6",
+    "langchain-anthropic>=1.7.6",
+    "langchain-core>=1.6.12",
+    "langchain-ollama>=1.1.0",
+    "langchain-openai>=1.7.2",
+    "langgraph>=1.2.16",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+lang-course = "lang_course:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
