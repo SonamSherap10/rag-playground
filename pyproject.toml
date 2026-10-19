@@ -10,10 +10,12 @@ requires-python = ">=3.12"
 dependencies = [
     "langchain>=1.4.6",
     "langchain-anthropic>=1.7.6",
+    "langchain-community>=0.4.2",
     "langchain-core>=1.6.12",
     "langchain-ollama>=1.1.0",
     "langchain-openai>=1.7.2",
     "langgraph>=1.2.16",
+    "pypdf>=6.21.1",
     "python-dotenv>=1.2.4",
 ]
 

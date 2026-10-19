@@ -31,7 +31,8 @@ def main():
         "Say 'set up complete' in one word"
     )
 
-    print(response_ollama.content)
+    print(response_ollama)
+    
     print("Setup Completed")
 
 
