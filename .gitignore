@@ -9,5 +9,14 @@ wheels/
 # Virtual environments
 .venv
 
+# Python virtual environments
+venv/
+.venv/
+chroma_db/chromavenv/
 
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment secrets
 .env
