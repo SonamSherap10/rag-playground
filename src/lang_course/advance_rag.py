@@ -399,7 +399,7 @@ def demo_advanced_rag_chain():
     print("=" * 60)
 
     vectorstore = create_base_vectorstore()
-    llm = ChatOllama(model="llama3.2:3b", temperature=0)  # CHANGED
+    llm = ChatOllama(model="w", temperature=0)  # CHANGED
 
     # Multi-query for better recall
     multi_retriever = MultiQueryRetriever.from_llm(
