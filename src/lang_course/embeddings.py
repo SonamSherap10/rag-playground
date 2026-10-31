@@ -50,8 +50,37 @@ def similarity_search():
     for doc, score in ranked_docs:
         print(f"Document: {doc}, Similarity Score: {score}")
 
+def caching():
+    from langchain_classic.embeddings.cache import CacheBackedEmbeddings
+    from langchain_classic.storage import LocalFileStore
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tempdir:
+        store = LocalFileStore(root_path=tempdir)
+
+        cached_embeddings = CacheBackedEmbeddings.from_bytes_store(
+            underlying_embeddings =  embeddings,
+            document_embedding_cache = store,
+            namespace = "exercise"
+        )
+
+        text = "What is ai"
+
+        print("First call (API):")
+        vectors1= cached_embeddings.embed_documents([text])
+        print(f" Embedded {len(vectors1)} docs")
+
+        print("\n Second call (CACHED)")
+        vectors2 = cached_embeddings.embed_documents([text])
+        print(f"Embedded {len(vectors2)} docs")
+
+        # verify same results
+        print(f"\n Same vectors :{np.allclose(vectors1[0],vectors2[0])}")
+
+
 
 if __name__ == "__main__":
     # basic_embeddings()
     # batch_embeddings()
-    similarity_search()
+    # similarity_search()
+    caching()
